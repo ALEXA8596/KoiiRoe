@@ -332,19 +332,19 @@ const useAccounts = () => {
 
   useEffect(() => {
     const checkWhitelist = async () => {
-      setWhitelisted(false);
-      if (activeBlockchainAccount) {
-        try {
-          const address = activeBlockchainAccount.getReceiveAddress();
-          const url = `${SALMON_API_URL}/v1/${networkId}/account/${address}/info`;
-          const { data } = await http.get(url);
-          if (data?.whitelisted) {
-            setWhitelisted(true);
-          }
-        } catch (e) {
-          console.log(e);
-        }
-      }
+      setWhitelisted(true);
+      // if (activeBlockchainAccount) {
+      //   try {
+      //     const address = activeBlockchainAccount.getReceiveAddress();
+      //     const url = `${SALMON_API_URL}/v1/${networkId}/account/${address}/info`;
+      //     const { data } = await http.get(url);
+      //     if (data?.whitelisted) {
+      //       setWhitelisted(true);
+      //     }
+      //   } catch (e) {
+      //     console.log(e);
+      //   }
+      // }
     };
 
     checkWhitelist();

@@ -5,13 +5,14 @@ import AdapterPage from '../pages/Adapter/AdapterPage';
 import TokenSection from '../pages/Token';
 import { getRoutesWithParent } from './utils';
 
-export const ROUTES_MAP = {
+const ROUTES_MAP = {
   WELCOME: 'WELCOME',
   ONBOARDING: 'ONBOARDING',
   WALLET: 'WALLET',
   TOKEN: 'TOKEN',
   ADAPTER: 'ADAPTER',
 };
+export { ROUTES_MAP };
 
 const routes = [
   {

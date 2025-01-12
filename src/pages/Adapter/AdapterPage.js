@@ -19,14 +19,17 @@ const AdapterPage = () => {
       if (loading) {
         const switches = await getSwitches();
         const isEnabled = ({ id }) => switches[id]?.enable;
-        const isSolana = ({ blockchain }) => blockchain === BLOCKCHAINS.SOLANA;
+        // const isSolana = ({ blockchain }) => blockchain === BLOCKCHAINS.SOLANA;
+        // const isKoii = ({ blockchain }) => blockchain === BLOCKCHAINS.KOII;
+        const isSolanaOrKoii = ({ blockchain }) =>
+          blockchain === BLOCKCHAINS.SOLANA || blockchain === BLOCKCHAINS.KOII;
         const solanaNetworks = (await getNetworks())
-          .filter(isSolana)
+          .filter(isSolanaOrKoii)
           .filter(isEnabled);
         setNetworks(solanaNetworks);
 
         if (activeBlockchainAccount) {
-          if (isSolana(activeBlockchainAccount.network)) {
+          if (isSolanaOrKoii(activeBlockchainAccount.network)) {
             setStep(2);
           } else {
             const network = solanaNetworks?.[0];

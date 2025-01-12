@@ -1,6 +1,7 @@
 import React, { useContext, useMemo } from 'react';
-import { AppContext } from './AppProvider';
 import routes, { ROUTES_MAP } from './routes/app-routes';
+import { AppContext } from './AppProvider';
+// import  from './routes/app-routes'; // Ensure ROUTES_MAP is imported correctly
 import RoutesBuilder from './routes/RoutesBuilder';
 
 const AppRoutes = () => {

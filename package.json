@@ -4,6 +4,8 @@
   "private": true,
   "license": "GPL-3.0-only",
   "dependencies": {
+    "@_koii/sdk": "^2.4.21",
+    "@_koii/web3.js": "^0.1.11",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.4",
@@ -12,6 +14,9 @@
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.8.0",
     "@silvermine/serverless-plugin-cloudfront-lambda-edge": "^2.2.3",
+    "@solana/buffer-layout": "^4.0.1",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.95.4",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
@@ -60,16 +65,14 @@
     "react-native-web-hover": "^0.2.9",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
-    "salmon-wallet-adapter": "0.2.5",
-    "salmon-wallet-standard": "^0.0.6",
+    "salmon-wallet-adapter": "file:FORKS/salmon-wallet-adapter",
+    "salmon-wallet-standard": "file:FORKS/salmon-wallet-standard",
     "serverless": "^3.25.1",
     "serverless-s3-sync": "^3.1.0",
     "stream-browserify": "^3.0.0",
     "tweetnacl": "^1.0.3",
     "util": "^0.12.4",
-    "web-vitals": "^2.1.4",
-    "@solana/spl-token": "^0.4.9",
-    "@solana/web3.js": "^1.95.4"
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
@@ -103,11 +106,11 @@
     "cross-fetch": "^3.1.5"
   },
   "scripts": {
-    "start:web": "PORT=3006 react-scripts start",
+    "start:web": "react-scripts start",
     "start:web:local": "PORT=3006 REACT_APP_SALMON_ENV=local react-scripts start",
     "start:web:main": "REACT_APP_SALMON_ENV=main react-scripts start",
     "start:web:prod": "REACT_APP_SALMON_ENV=production react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build --verbose",
     "build:local": "REACT_APP_SALMON_ENV=local npm run build",
     "build:develop": "REACT_APP_SALMON_ENV=development npm run build",
     "build:main": "REACT_APP_SALMON_ENV=main npm run build",

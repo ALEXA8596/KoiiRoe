@@ -41,7 +41,7 @@ const DerivedAccountsPage = ({ t }) => {
 
   useEffect(() => {
     const load = async () => {
-      const { ETHEREUM, SOLANA } = BLOCKCHAINS;
+      const { ETHEREUM, SOLANA, KOII } = BLOCKCHAINS;
       const { mnemonic } = activeAccount;
 
       // Derived accounts with credit
@@ -49,7 +49,7 @@ const DerivedAccountsPage = ({ t }) => {
         Object.values(activeAccount.networksAccounts)
           .flat()
           .filter(({ network }) =>
-            [ETHEREUM, SOLANA].includes(network.blockchain),
+            [ETHEREUM, SOLANA, KOII].includes(network.blockchain),
           )
           .flatMap(({ network }) =>
             Array.from({ length: 9 }, (_, i) => ({

@@ -88,9 +88,10 @@ const getConnection = async (
   origin,
   { connection, networkId, trustedApps },
 ) => {
-  if (connection?.blockchain !== 'solana') {
+  if (connection?.blockchain !== 'solana' && connection?.blockchain !== 'koii') {
     return null;
   }
+  
   if (!networkId || !trustedApps?.[networkId]?.[origin]) {
     return null;
   }

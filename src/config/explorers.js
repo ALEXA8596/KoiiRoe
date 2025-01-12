@@ -24,6 +24,20 @@ const EXPLORERS = {
     testnet: SOLANA_EXPLORERS,
     devnet: SOLANA_EXPLORERS,
   },
+  KOII: {
+    mainnet: {
+      KOII_EXPLORER: {
+        name: 'Koii Explorer',
+        url: 'https://explorer.koii.live/tx/{txId}',
+      },
+    },
+    testnet: {
+      KOII_EXPLORER: {
+        name: 'Koii Explorer',
+        url: 'https://explorer.koii.live/tx/{txId}',
+      },
+    },
+  },
   ETHEREUM: {
     mainnet: {
       ETHERSCAN: {
@@ -106,6 +120,7 @@ const DEFAULT_EXPLORERS = {
   ETHEREUM: 'ETHERSCAN',
   BITCOIN: 'BLOCKCYPHER',
   ECLIPSE: 'ECLIPSE_EXPLORER',
+  KOII: 'KOII_EXPLORER'
 };
 
 export { EXPLORERS, DEFAULT_EXPLORERS };
