@@ -1,0 +1,26 @@
+diff --git a/node_modules/ed25519-hd-key/dist/index.js b/node_modules/ed25519-hd-key/dist/index.js
+index a768373..e2f74f6 100644
+--- a/node_modules/ed25519-hd-key/dist/index.js
++++ b/node_modules/ed25519-hd-key/dist/index.js
+@@ -9,8 +9,8 @@ const HARDENED_OFFSET = 0x80000000;
+ exports.getMasterKeyFromSeed = (seed) => {
+     const hmac = createHmac('sha512', ED25519_CURVE);
+     const I = hmac.update(Buffer.from(seed, 'hex')).digest();
+-    const IL = I.slice(0, 32);
+-    const IR = I.slice(32);
++    const IL = Buffer.from(I.subarray(0, 32));
++    const IR = Buffer.from(I.subarray(32));
+     return {
+         key: IL,
+         chainCode: IR,
+@@ -23,8 +23,8 @@ exports.CKDPriv = ({ key, chainCode }, index) => {
+     const I = createHmac('sha512', chainCode)
+         .update(data)
+         .digest();
+-    const IL = I.slice(0, 32);
+-    const IR = I.slice(32);
++        const IL = Buffer.from(I.subarray(0, 32));
++        const IR = Buffer.from(I.subarray(32));
+     return {
+         key: IL,
+         chainCode: IR,

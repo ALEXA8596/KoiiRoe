@@ -206,10 +206,12 @@ android {
 
     splits {
         abi {
-            reset()
-            enable enableSeparateBuildPerCPUArchitecture
-            universalApk false  // If true, also generate a universal APK
-            include (*reactNativeArchitectures())
+            // reset()
+            // enable enableSeparateBuildPerCPUArchitecture
+            // universalApk false  // If true, also generate a universal APK
+            // include (*reactNativeArchitectures())
+            enable false
+            universalApk true
         }
     }
     signingConfigs {
